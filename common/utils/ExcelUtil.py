@@ -6,7 +6,7 @@ from xlwt import XFStyle
 
 '''
 Created on 2022年1月6日
-@author: dujianxiao
+@author: zohar
 '''
 
 

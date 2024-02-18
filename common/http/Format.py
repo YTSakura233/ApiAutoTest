@@ -5,7 +5,7 @@ from time import sleep
 import re, chardet, os, json, datetime, time, demjson3, xmltodict, jsonschema, shutil
 
 '''
-@author: dujianxiao
+@author: zohar
 '''
 
 

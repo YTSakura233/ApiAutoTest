@@ -2,7 +2,7 @@ from PyQt5.QtWidgets import QComboBox, QLineEdit, QListWidget, QCheckBox, QListW
 from PyQt5.QtCore import pyqtSignal  # 导入这个模块才可以创建信号
 
 '''
-@author: dujianxiao
+@author: zohar
 '''
 
 class ExampleBox(QComboBox):

@@ -1,4 +1,0 @@
-Traceback (most recent call last):
-  File "F:\shimo-2.0\sm.py", line 302, in openHtml
-    os.startfile(eval(html_path))
-FileNotFoundError: [WinError 2] 系统找不到指定的文件。: 'F:/shimo-2.0/demo/result/ems-20240218-report.html'

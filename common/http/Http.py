@@ -6,7 +6,7 @@ from requests.adapters import HTTPAdapter
 import requests, re, chardet, os, json, datetime, time, demjson3, xmltodict, jsonschema, shutil
 
 '''
-@author: dujianxiao
+@author: zohar
 '''
 
 

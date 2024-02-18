@@ -18,7 +18,7 @@ from common.utils.ExcelUtil import ExcelUtil
 
 '''
 #主类
-#author: Zohar
+#author: zohar
 '''
 date = time.strftime("%Y%m%d")
 

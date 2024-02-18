@@ -4,7 +4,7 @@ import re, chardet, os, json, datetime, time, demjson3, xmltodict, jsonschema, s
 
 '''   
 @获取校验字段和预期结果的原始值和结果值                                                                                                       
-@author: dujianxiao          
+@author: zohar          
 '''
 
 

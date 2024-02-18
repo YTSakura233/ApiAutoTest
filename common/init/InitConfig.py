@@ -2,7 +2,7 @@ import configparser
 import os.path
 
 '''
-@author: dujianxiao
+@author: zohar
 '''
 
 
