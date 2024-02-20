@@ -31,6 +31,7 @@ class DetailUI(Ui_MainWindow, QMainWindow, Write, Report, Template):
 
     def __init__(self):
         super().__init__()
+        self.starttest = False
         self.debug_thread = None
         self.analy_thread = None
         self.setupUi(self)
@@ -41,7 +42,6 @@ class DetailUI(Ui_MainWindow, QMainWindow, Write, Report, Template):
         self.qSheetName.setView(QListView())
 
         self.file.clicked.connect(self.getFile)
-        self.fileName.clicked.connect(self.openExample)
         self.qSheetName.currentIndexChanged['int'].connect(self.changeSheet)
         self.refresh.clicked.connect(self.reloadSheet)
         self.example.popupAboutToBeShown.connect(self.reload)
@@ -281,6 +281,9 @@ class DetailUI(Ui_MainWindow, QMainWindow, Write, Report, Template):
         fname = ex.fileName.text()
         if fname in ['请选择文件', '']:
             self.console.clear()
+            self.console.insertPlainText('请先选择文件并执行测试\n')
+        elif not self.starttest:
+            self.console.insertPlainText('请先选择文件并执行测试\n')
         else:
             reportName = file[:file.index('.xls')] + '-' + date + '-report.xls'
             if file.endswith('xlsx'):
@@ -295,6 +298,9 @@ class DetailUI(Ui_MainWindow, QMainWindow, Write, Report, Template):
         fname = ex.fileName.text()
         if fname in ['请选择文件', '']:
             self.console.clear()
+            self.console.insertPlainText('请先选择文件并执行测试\n')
+        elif not self.starttest:
+            self.console.insertPlainText('请先选择文件并执行测试\n')
         else:
             file_name = file[:file.index('.xls')]
             reportName = f"{file_name}-{date}-report.html"
@@ -308,6 +314,9 @@ class DetailUI(Ui_MainWindow, QMainWindow, Write, Report, Template):
         fname = ex.fileName.text()
         if fname in ['请选择文件', '']:
             self.console.clear()
+            self.console.insertPlainText('请先选择文件并执行测试\n')
+        elif not self.starttest:
+            self.console.insertPlainText('请先选择文件并执行测试\n')
         else:
             log_path = f"r'{path}/result/info.log'"
             os.startfile(eval(log_path))
@@ -327,6 +336,7 @@ class DetailUI(Ui_MainWindow, QMainWindow, Write, Report, Template):
         """
         fname = ex.fileName.text()
         if fname in ['请选择文件', '']:
+            self.console.insertPlainText('请选择文件\n')
             pass
         else:
             ss = self.analyJSON.text()
@@ -346,6 +356,7 @@ class DetailUI(Ui_MainWindow, QMainWindow, Write, Report, Template):
         """
         fname = ex.fileName.text()
         if fname in ['请选择文件', '']:
+            self.console.insertPlainText('请选择文件\n')
             pass
         else:
             ss = self.debug.text()
@@ -354,6 +365,7 @@ class DetailUI(Ui_MainWindow, QMainWindow, Write, Report, Template):
                 self.debug_thread = debugClass()
                 self.debug_thread.start()
                 self.debug.setText('停  止')
+                self.starttest = True
             elif ss == '停  止':
                 self.debug.setText('开  始')
                 self.debug_thread.terminate()
